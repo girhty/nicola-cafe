@@ -1,0 +1,78 @@
+---
+import Nav from '../components/Nav.astro';
+import '../styles/global.css';
+
+const {
+  title = 'Nicola Cafe - کافێ نیکۆڵا | Premium Portuguese Coffee in Erbil',
+  description = 'Nicola Cafe (کافێ نیکۆڵا) in Erbil — same flavor, a new way of drinking. Premium Portuguese coffee, sweet treats and unmatched vibes. Open daily 8:30 AM – 12:30 AM. Rated 4.6 on Google.',
+} = Astro.props;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CafeOrCoffeeShop',
+  name: 'Nicola Cafe - کافێ نیکۆڵا',
+  image: 'https://lh3.googleusercontent.com/grass-cs/AABkmLcDuzhbx4vrrq0dyY85T13ixly0H7bFqUUVBQTQxScZYq90lztKzgmeQKtmJtbCKWZQBXRl3bzfTfcHE0vAjbYQvQYsHHSXuEHtATJXMPD7EjWjLAOXUQfYPhEhHs_k6gDEEpGSEW3zqFE=w600-h450-p-k-no',
+  telephone: '+9647500071779',
+  address: { '@type': 'PostalAddress', addressLocality: 'Erbil', addressRegion: 'Erbil Governorate', addressCountry: 'IQ' },
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.6', bestRating: '5' },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+      opens: '08:30',
+      closes: '00:30',
+    },
+  ],
+  sameAs: ['https://www.instagram.com/nicolacafeerbil/'],
+};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#070707" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="canonical" href={Astro.site} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://lh3.googleusercontent.com/grass-cs/AABkmLcDuzhbx4vrrq0dyY85T13ixly0H7bFqUUVBQTQxScZYq90lztKzgmeQKtmJtbCKWZQBXRl3bzfTfcHE0vAjbYQvQYsHHSXuEHtATJXMPD7EjWjLAOXUQfYPhEhHs_k6gDEEpGSEW3zqFE=w600-h450-p-k-no" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="https://scontent-ams2-1.cdninstagram.com/v/t51.82787-19/519728600_17846163981527572_2154922724636557149_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=102&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=rE6XguNLvBMQ7kNvwHMPDPj&_nc_oc=AdqQkh4Y8DolgqE6LfRhCiXXq8uDIWFnOKaFHVruvQt530-cmo8xqoCAkeCZYswIrkg&_nc_zt=24&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=UWQl3q5T9w751lcsvXxbqw&_nc_ss=7ba8c&oh=00_AQIaPuOk6SosRjkLj-xf8UA4iYIm_-ubjrPy2l8TqmE0uw&oe=6ABDB80B" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Noto+Kufi+Arabic:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body class="bg-ink font-body text-bone antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-amber focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-ink"
+    >
+      Skip to content
+    </a>
+
+    <Nav />
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <canvas id="dust-canvas" aria-hidden="true" class="pointer-events-none fixed inset-0 z-30 h-full w-full opacity-40"></canvas>
+
+    <script>
+      import '../scripts/motion.js';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
+import ShaderLayer from '../components/ShaderLayer.astro';
+import BentoGrid from '../components/BentoGrid.astro';
+import Reviews from '../components/Reviews.astro';
+import Visit from '../components/Visit.astro';
+import Footer from '../components/Footer.astro';
+
+const P = 'https://lh3.googleusercontent.com/grass-cs/';
+const photos = {
+  hero: `${P}AABkmLcDuzhbx4vrrq0dyY85T13ixly0H7bFqUUVBQTQxScZYq90lztKzgmeQKtmJtbCKWZQBXRl3bzfTfcHE0vAjbYQvQYsHHSXuEHtATJXMPD7EjWjLAOXUQfYPhEhHs_k6gDEEpGSEW3zqFE=w600-h450-p-k-no`,
+  p1: `${P}AABkmLeLBDRoz6Xm8qfn1nrF5fon2_OLTbWkukCx5g-CVD3kXOidO7VJNRHmrVR8OSyTALXY8dNZ9fQhg2MdJp7gAoVId3ZFhxjQzm8SiuUzrBo8cgnghBHQk4_5e_2atTMCfKTVgYRoiCWUkyE=w300-h225-p-k-no`,
+  p2: `${P}AABkmLcnI28DMyYEx97QMAV-f8kPKo9cRMmH0bsLHzuI1-baG_VWVBYOcHrXGP4PJxdDar111NzfWwp9YdSS8xfQZtV4n-pfrWcsY5V3nzoNDiXdXLgGQDdvLXnBeTssqtvIeeGTsHi9We4puRM=w300-h225-p-k-no`,
+  p3: `${P}AABkmLfJKyA8Oo1rryzutDuv7dhgZ3kISjdyGH4qzgBwZcZ14yzr-RC_xV0lO7VeujkfxN_WamGhuPfQeLsLtIlI3xKRyreiq1s3BOYqQR6CV8d85i3sD0bjbpHIkYb60w8xwLa-CeNJ7fc6ZEc=w300-h225-p-k-no`,
+  p4: `${P}AABkmLeuh0rHtPsLb-FiM0lRNBiTBHVkusf-Vuwt5Jc56mOfSn5924OO_tlLb_3_OtWCURsm_oMWiZQkifX64E4Ab1XpsesYLFcPU0Bd2JzgBk1gPn0tE4yuqO0X1rNDgOzDkxx3DGYH-IuRSuoV=w300-h225-p-k-no`,
+  tall: `${P}AABkmLe3zkB9E4QsYdH8juCyzqL3k_86VUHifpEJx-utcGbc52UDKXaxYneMe-sfmM_YMmO_386Sn15NoGP1wIFThnMXCWCAEcPO7uMQL-OQtbPV-f0PUYmj0y_0qYhyochkicCjmE62J1GqQbI=w300-h450-p-k-no`,
+  p5: `${P}AABkmLfBxgRAac0ULewotv25QWvT93AnEUKBFvoSS5mJJz3HsLrW0rtGRFyiEaFvkbmhGxVzaDD7YZ06MEGYAtHOlxUwvwm49aGXwOT8aKk8lFZvoUkWKmRqShqXCJwVYRcIbNT21Zb7Bb3Xbhpg=w300-h225-p-k-no`,
+  p6: `${P}AABkmLc_txHW4gt5ce1Xpj7cjCMZr-zTTfYLUeiTAVQETA2h0Jjw0YDn8-k42MWRtKpa3g4YngfHAP2lyvhpGn-g7AKyTMZSuj9iabkGxpsfN_1CCcqtgxzhYXojD7C4pyw-e32a5bzeJxa1IVO7=w300-h225-p-k-no`,
+};
+
+const menu = [
+  {
+    tag: 'Signature',
+    title: 'Portuguese Coffee',
+    body: 'Portuguese details… and an unforgettable taste. Slow-poured, velvety, and finished with the Nicola touch.',
+    ar: 'تفاصيل برتغالية ومذاق ما بينتسى',
+    img: photos.p1,
+    span: 'lg:col-span-6 xl:col-span-5',
+  },
+  {
+    tag: 'Espresso',
+    title: 'Nicola Classic',
+    body: 'Same flavor but a new way of drinking — a dense crema, roasted deep, pulled to a 25 second finish.',
+    ar: 'نفس النكهة وطريقة شرب جديدة',
+    img: photos.p2,
+    span: 'lg:col-span-6 xl:col-span-4',
+  },
+  {
+    tag: 'Iced',
+    title: 'Cold & Iced Line',
+    body: 'Your favorite drink… with you every step of the way. Served over clear ice, built for Erbil summers.',
+    ar: 'مشروبك المفضل… معك بكل طريق',
+    img: photos.p3,
+    span: 'lg:col-span-6 xl:col-span-3',
+  },
+  {
+    tag: 'Patisserie',
+    title: 'Sweet Treats',
+    body: 'Freshly plated desserts and bakery bites, designed to sit beside a long, unhurried conversation.',
+    ar: 'حلويات تُقدَّم مع الحديث الطويل',
+    img: photos.tall,
+    span: 'lg:col-span-6 xl:col-span-6',
+  },
+];
+---
+
+<Layout>
+  <!-- ============ HERO ============ -->
+  <Hero />
+
+  <!-- ============ MARQUEE ============ -->
+  <section data-surface="dark" class="relative border-y border-white/10 bg-amber py-3 text-ink" aria-label="Highlights">
+    <div class="marquee-track">
+      {
+        [0, 1].map(() => (
+          <div class="flex shrink-0 items-center gap-8 pr-8 font-mono2 text-[11px] font-medium uppercase tracking-[.34em] sm:text-xs">
+            <span>Portuguese Coffee</span><span aria-hidden="true">✦</span>
+            <span>Specialty Espresso</span><span aria-hidden="true">✦</span>
+            <span>Sweet Treats</span><span aria-hidden="true">✦</span>
+            <span class="font-ar tracking-normal">کافێ نیکۆڵا</span><span aria-hidden="true">✦</span>
+            <span>Since 1779</span><span aria-hidden="true">✦</span>
+            <span>Open 8:30 → 00:30</span><span aria-hidden="true">✦</span>
+            <span>Erbil · Iraq</span><span aria-hidden="true">✦</span>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- ============ STORY (bone surface) ============ -->
+  <section id="story" data-surface="light" class="grain relative overflow-hidden bg-bone py-20 text-[#100f0d] sm:py-28">
+    <div class="mx-auto max-w-shell px-5 sm:px-8">
+      <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-5">
+          <p class="eyebrow reveal text-[#100f0d]/55">01 — The House</p>
+          <h2 class="mt-6 text-4xl font-extrabold leading-[.95] sm:text-5xl lg:text-6xl">
+            <span class="line-mask"><span>Same flavor,</span></span>
+            <span class="line-mask" style="--d:110ms"><span>a new way of</span></span>
+            <span class="line-mask" style="--d:220ms"><span class="text-amber-deep">drinking.</span></span>
+          </h2>
+          <p class="font-script mt-4 text-2xl text-[#100f0d]/70 sm:text-3xl">a spot in Erbil since 1779</p>
+          <p class="reveal mt-6 max-w-md text-[15px] leading-relaxed text-[#100f0d]/70" style="--d:120ms">
+            Nicola is a coffee house built on a single idea: keep the flavor, change the ritual. Every cup is
+            finished with Portuguese technique, roasted in small batches, and served in a room designed for
+            long stays — from the first pour at 8:30 in the morning to the last conversation after midnight.
+          </p>
+          <p class="font-ar reveal mt-4 max-w-md text-[15px] leading-loose text-[#100f0d]/60" style="--d:180ms">
+            مقهى في أربيل يقدّم قهوة برتغالية فاخرة وحلويات وأجواء لا تُنسى.
+          </p>
+
+          <div class="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-[#100f0d]/10">
+            <div class="bg-bone p-5 reveal" style="--d:60ms">
+              <p class="font-display text-3xl font-extrabold"><span data-count="1779" data-decimals="0">1779</span></p>
+              <p class="font-mono2 mt-1 text-[10px] uppercase tracking-[.22em] text-[#100f0d]/50">Established</p>
+            </div>
+            <div class="bg-bone p-5 reveal" style="--d:140ms">
+              <p class="font-display text-3xl font-extrabold text-amber-deep"><span data-count="4.6" data-decimals="1">0.0</span></p>
+              <p class="font-mono2 mt-1 text-[10px] uppercase tracking-[.22em] text-[#100f0d]/50">Google rating</p>
+            </div>
+            <div class="bg-bone p-5 reveal" style="--d:220ms">
+              <p class="font-display text-3xl font-extrabold"><span data-count="5686" data-decimals="0">0</span></p>
+              <p class="font-mono2 mt-1 text-[10px] uppercase tracking-[.22em] text-[#100f0d]/50">Community</p>
+            </div>
+            <div class="bg-bone p-5 reveal" style="--d:300ms">
+              <p class="font-display text-3xl font-extrabold">16h</p>
+              <p class="font-mono2 mt-1 text-[10px] uppercase tracking-[.22em] text-[#100f0d]/50">Open daily</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="grid grid-cols-2 gap-4 sm:gap-5">
+            <figure class="img-wrap group relative col-span-2 overflow-hidden rounded-3xl bg-cream reveal" data-parallax="18">
+              <img
+                src={photos.hero}
+                alt="Coffee served at Nicola Cafe in Erbil"
+                width="600"
+                height="450"
+                loading="lazy"
+                decoding="async"
+                class="img-kenburns h-56 w-full object-cover sm:h-72"
+              />
+              <figcaption class="glass absolute bottom-4 left-4 rounded-full px-4 py-2 font-mono2 text-[10px] uppercase tracking-[.2em] text-bone">
+                The signature pour
+              </figcaption>
+            </figure>
+            <figure class="img-wrap group relative overflow-hidden rounded-3xl bg-cream reveal" style="--d:120ms">
+              <img src={photos.p4} alt="Interior detail of Nicola Cafe" width="300" height="225" loading="lazy" decoding="async" class="img-kenburns h-44 w-full object-cover sm:h-56" />
+            </figure>
+            <figure class="img-wrap group relative overflow-hidden rounded-3xl bg-cream reveal" style="--d:220ms" data-parallax="-14">
+              <img src={photos.p5} alt="Sweet treats at Nicola Cafe" width="300" height="225" loading="lazy" decoding="async" class="img-kenburns h-44 w-full object-cover sm:h-56" />
+            </figure>
+          </div>
+
+          <div class="mt-6 grid gap-4 sm:grid-cols-3">
+            {
+              [
+                ['Roasted small', 'Batches dialed in every week so the crema never changes.'],
+                ['Brewed slow', 'Portuguese technique: patient extraction, richer body.'],
+                ['Stayed in', 'Corners, sockets, low light — built for long sittings.'],
+              ].map(([t, b], i) => (
+                <div class="rounded-2xl border border-[#100f0d]/10 bg-white/50 p-5 reveal card-hover" style={`--d:${120 + i * 110}ms`}>
+                  <p class="font-mono2 text-[10px] uppercase tracking-[.24em] text-amber-deep">0{i + 1}</p>
+                  <p class="font-display mt-2 text-base font-bold">{t}</p>
+                  <p class="mt-1.5 text-[13px] leading-relaxed text-[#100f0d]/60">{b}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MENU (dark surface) ============ -->
+  <section id="menu" data-surface="dark" class="relative overflow-hidden bg-ink py-20 sm:py-28">
+    <div class="mx-auto max-w-shell px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <div>
+          <p class="eyebrow reveal text-bone/50">02 — Menu</p>
+          <h2 class="mt-5 text-4xl font-extrabold leading-[.95] sm:text-5xl">
+            <span class="line-mask"><span>Built by hand,</span></span>
+            <span class="line-mask" style="--d:110ms"><span class="text-amber">cup by cup.</span></span>
+          </h2>
+        </div>
+        <p class="reveal max-w-sm text-sm leading-relaxed text-bone/55" style="--d:150ms">
+          A tight list, executed precisely — hot, iced, and everything that belongs beside them.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-5 lg:grid-cols-12">
+        {menu.map((m, i) => <Card {...m} index={i} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OPALESCENCE STATEMENT ============ -->
+  <section data-surface="dark" class="relative isolate overflow-hidden border-y border-white/10 bg-ink">
+    <ShaderLayer className="absolute inset-0 h-full w-full" />
+    <div class="relative z-10 mx-auto max-w-shell px-5 py-24 text-center sm:px-8 sm:py-32">
+      <p class="eyebrow justify-center text-bone/60 reveal">03 — Ethos</p>
+      <blockquote class="mx-auto mt-8 max-w-4xl">
+        <p class="text-3xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
+          <span class="line-mask"><span>“When I choose calm…</span></span>
+          <span class="line-mask" style="--d:120ms"><span class="font-script font-normal text-amber-light">I choose Nicola.”</span></span>
+        </p>
+        <p class="font-ar mt-6 text-lg leading-loose text-bone/70 reveal" style="--d:180ms">
+          کاتێک ئارامی هەڵدەبژێرم… نیکۆلا هەڵدەبژێرم.
+        </p>
+        <p class="mt-4 text-base text-bone/55 reveal" style="--d:250ms">
+          When I choose calm… I choose Nicola — Erbil.
+        </p>
+      </blockquote>
+      <div class="mt-10 flex justify-center reveal" style="--d:320ms">
+        <a href="https://www.instagram.com/nicolacafeerbil/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+          @nicolacafeerbil <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY (bone surface) ============ -->
+  <section id="gallery" data-surface="light" class="grain relative overflow-hidden bg-bone py-20 text-[#100f0d] sm:py-28">
+    <div class="mx-auto max-w-shell px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <div>
+          <p class="eyebrow reveal text-[#100f0d]/55">04 — Feed</p>
+          <h2 class="mt-5 text-4xl font-extrabold leading-[.95] sm:text-5xl">
+            <span class="line-mask"><span>Frames from</span></span>
+            <span class="line-mask" style="--d:110ms"><span>the feed.</span></span>
+          </h2>
+        </div>
+        <a
+          href="https://www.instagram.com/nicolacafeerbil/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="reveal group flex items-center gap-3 rounded-full border border-[#100f0d]/15 bg-white/60 px-4 py-2.5 transition hover:border-amber hover:bg-white"
+          style="--d:140ms"
+        >
+          <span class="font-mono2 text-[11px] uppercase tracking-[.2em]">@nicolacafeerbil</span>
+          <span class="rounded-full bg-amber px-2.5 py-1 font-mono2 text-[10px] font-medium text-ink">
+            <span data-count="5686" data-decimals="0">0</span> followers
+          </span>
+        </a>
+      </div>
+
+      <BentoGrid />
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS (dark surface) ============ -->
+  <Reviews />
+
+  <!-- ============ VISIT (bone surface) ============ -->
+  <Visit />
+
+  <Footer />
+</Layout>

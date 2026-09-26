@@ -1,0 +1,121 @@
+---
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const hours = days.map((d) => ({ day: d, open: '8:30 AM', close: '12:30 AM' }));
+---
+
+<section id="visit" data-surface="light" class="grain relative overflow-hidden bg-bone py-20 text-[#100f0d] sm:py-28" aria-labelledby="visit-title">
+  <div class="mx-auto max-w-shell px-5 sm:px-8">
+    <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-5">
+        <p class="eyebrow reveal text-[#100f0d]/55">06 — Visit</p>
+        <h2 id="visit-title" class="mt-5 text-4xl font-extrabold leading-[.95] sm:text-5xl">
+          <span class="line-mask"><span>Find us in</span></span>
+          <span class="line-mask" style="--d:110ms"><span class="text-amber-deep">Erbil.</span></span>
+        </h2>
+
+        <div class="mt-8 space-y-3">
+          <div class="reveal rounded-2xl border border-[#100f0d]/10 bg-white/60 p-5" style="--d:80ms">
+            <p class="font-mono2 text-[10px] uppercase tracking-[.24em] text-[#100f0d]/45">Address</p>
+            <p class="mt-1.5 text-[15px] font-medium">Erbil, Erbil Governorate</p>
+            <a
+              class="mt-2 inline-flex items-center gap-1.5 text-[13px] text-amber-deep underline underline-offset-4 hover:text-ink"
+              href="https://www.google.com/maps/search/?api=1&query=Nicola+Cafe+Erbil"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open in Google Maps <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="reveal rounded-2xl border border-[#100f0d]/10 bg-white/60 p-5" style="--d:160ms">
+            <p class="font-mono2 text-[10px] uppercase tracking-[.24em] text-[#100f0d]/45">Phone</p>
+            <a class="mt-1.5 block text-[17px] font-semibold tracking-wide hover:text-amber-deep" href="tel:+9647500071779">
+              0750 007 1779
+            </a>
+          </div>
+
+          <div class="reveal rounded-2xl border border-[#100f0d]/10 bg-white/60 p-5" style="--d:240ms">
+            <div class="flex items-center justify-between gap-3">
+              <div>
+                <p class="font-mono2 text-[10px] uppercase tracking-[.24em] text-[#100f0d]/45">Status</p>
+                <p class="mt-1.5 flex items-center gap-2 text-[15px] font-semibold" data-status-wrap>
+                  <span class="h-2 w-2 rounded-full bg-[#2f9e63] animate-blip" data-status-dot></span>
+                  <span data-status>Checking hours…</span>
+                </p>
+              </div>
+              <p class="font-mono2 text-right text-[11px] leading-tight text-[#100f0d]/50" data-status-sub>
+                Daily 8:30 AM – 12:30 AM
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 reveal rounded-2xl border border-[#100f0d]/10 bg-white/60 p-5" style="--d:320ms">
+          <div class="flex items-center justify-between">
+            <p class="font-mono2 text-[10px] uppercase tracking-[.24em] text-[#100f0d]/45">Opening hours</p>
+            <p class="font-mono2 text-[10px] uppercase tracking-[.2em] text-[#100f0d]/40">Erbil time</p>
+          </div>
+          <ul class="mt-3 divide-y divide-[#100f0d]/10">
+            {
+              hours.map((h, i) => (
+                <li class="flex items-center justify-between py-2 text-[13.5px]" data-hours-row={i}>
+                  <span class="font-medium" data-day={h.day}>
+                    {h.day}
+                  </span>
+                  <span class="font-mono2 text-[12px] text-[#100f0d]/60">
+                    {h.open} — {h.close}
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="overflow-hidden rounded-3xl border border-[#100f0d]/10 bg-white reveal shadow-[0_30px_70px_-45px_rgba(7,7,7,.7)]" style="--d:140ms">
+          <div class="relative h-72 sm:h-[420px]">
+            <iframe
+              title="Map showing Nicola Cafe location in Erbil"
+              src="https://www.google.com/maps?q=Nicola%20Cafe%20Erbil&output=embed"
+              class="h-full w-full border-0 grayscale-[.25]"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+            <div class="pointer-events-none absolute left-4 top-4 rounded-full bg-ink/85 px-4 py-2 font-mono2 text-[10px] uppercase tracking-[.22em] text-bone backdrop-blur">
+              36.1911° N · 44.0092° E
+            </div>
+          </div>
+
+          <div class="grid gap-px bg-[#100f0d]/10 sm:grid-cols-3">
+            <div class="bg-bone p-5">
+              <p class="font-mono2 text-[10px] uppercase tracking-[.22em] text-[#100f0d]/45">Today</p>
+              <p class="mt-1.5 text-[15px] font-semibold">8:30 AM — 12:30 AM</p>
+            </div>
+            <div class="bg-bone p-5">
+              <p class="font-mono2 text-[10px] uppercase tracking-[.22em] text-[#100f0d]/45">Kitchen</p>
+              <p class="mt-1.5 text-[15px] font-semibold">Coffee · Sweets</p>
+            </div>
+            <div class="bg-bone p-5">
+              <p class="font-mono2 text-[10px] uppercase tracking-[.22em] text-[#100f0d]/45">Vibe</p>
+              <p class="mt-1.5 text-[15px] font-semibold">Calm · Since 1779</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 flex flex-wrap gap-3 reveal" style="--d:220ms">
+          <a href="tel:+9647500071779" class="btn btn-dark">Call the cafe</a>
+          <a
+            href="https://www.instagram.com/nicolacafeerbil/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn border border-[#100f0d]/20 text-[#100f0d] hover:border-amber hover:text-amber-deep"
+          >
+            Follow @nicolacafeerbil <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

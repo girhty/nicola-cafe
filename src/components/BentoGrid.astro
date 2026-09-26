@@ -1,0 +1,121 @@
+---
+const posts = [
+  {
+    caption:
+      'Portuguese details… and an unforgettable taste ☕ — تفاصيل برتغالية ومذاق ما بينتسى',
+    image_url:
+      'https://scontent-ams2-1.cdninstagram.com/v/t51.82787-15/632472120_17874672435527572_7775775153151118812_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=SrDKqhUygX0Q7kNvwFPBSQ6&_nc_oc=Ados2HB9RCakYkoQSgL6B5BtZ77Y2RRsUwDbB9YOTyg8vxSoQeMDVXPl8aCm8ufMsJA&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=iPdH2YBgJyl4PCH8VSZzYA&_nc_ss=7ba8c&oh=00_AQJI59N6-uehVJOZR_VzC49OQ6HDby_n2WsCEylbpdAv2g&oe=6ABDD257',
+    likes: 0,
+    span: 'col-span-2 row-span-2',
+  },
+  {
+    caption: 'Portuguese details… and an unforgettable taste ☕',
+    image_url:
+      'https://scontent-ams2-1.cdninstagram.com/v/t51.82787-15/628057939_17874672399527572_772569787935972495_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=2Ldzm46nw-UQ7kNvwF3VCed&_nc_oc=AdqrtsL0OUWcvCbmFC-sU8zcpJwGc69jqmiI2TepfkGIGsaEhg67aK_5dUkj-MdqEfE&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=iPdH2YBgJyl4PCH8VSZzYA&_nc_ss=7ba8c&oh=00_AQIOyKG4quVRKqZ83rYzZVafDm2ATy8MBxjgTBR6mkEvZA&oe=6ABDE4DA',
+    likes: 0,
+    span: '',
+  },
+  {
+    caption: 'Portuguese details… and an unforgettable taste ☕',
+    image_url:
+      'https://scontent-ams2-1.cdninstagram.com/v/t51.82787-15/628227912_17874672357527572_11414168255241413_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=wCJXcBYf6vIQ7kNvwH48YwD&_nc_oc=Ado2vrybYmopNzaOzDmp2v4Z5u1rcc9ZX4Iov6KF-78GIXSJ4JegplGc9QyliqUmVA8&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=iPdH2YBgJyl4PCH8VSZzYA&_nc_ss=7ba8c&oh=00_AQLtDtklnpubNXbACrUfeHfSod5-Ebc4f8sEsidD8G_lJA&oe=6ABDC703',
+    likes: 0,
+    span: '',
+  },
+  {
+    caption: 'When I choose calm… I choose Nicola',
+    image_url:
+      'https://scontent-ams2-1.cdninstagram.com/v/t51.82787-15/681164191_17886502494527572_5030324876990998182_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=0ZspHIBYDxQQ7kNvwEb0iET&_nc_oc=AdpNpIGZorGIyzm2AQnkv6X4npE9OJDq2CQ-S_xRuFEotxjz8wSP9ojqghP_QZXHvW8&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=iPdH2YBgJyl4PCH8VSZzYA&_nc_ss=7ba8c&oh=00_AQLEA0JPpLp21Y62iX3ZVjo-q3rLuuKSw4JjgT_0WOmLnA&oe=6ABDB9E1',
+    likes: 0,
+    span: '',
+  },
+  {
+    caption: 'Summer starts with Nicola ☀️ — هاوین لەگەڵ نیکۆلا دەست پێ دەکات',
+    image_url:
+      'https://scontent-ams2-1.cdninstagram.com/v/t51.71878-15/671114734_1450395600164184_3690580720743367022_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=c6ildKR3vBAQ7kNvwFkglIm&_nc_oc=AdpY5c_rg_hHrqqolA6EYEIhQsgl7vNa5-gNcoq3tQKlTRTED6Iyn5i3rUUkMUucH0g&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=iPdH2YBgJyl4PCH8VSZzYA&_nc_ss=7ba8c&oh=00_AQI4BNGYX4Q3relH4xKbHDTHfc7TrGT9IOfhAz8-Dv8IFw&oe=6ABDEC92',
+    likes: 0,
+    span: 'row-span-2',
+  },
+  {
+    caption: 'Your favorite drink… with you every step of the way — From Nicola Café ☕',
+    image_url:
+      'https://scontent-ams2-1.cdninstagram.com/v/t51.82787-15/671776450_17885305233527572_3556971225804953796_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=ekZlaCbf_k4Q7kNvwGIFsGf&_nc_oc=Adr2EScXr4mRyo-JPjzZWbJacuCI7EgjdXQ-sr7bevHdGhQy4Ub1WDDXc5g4JNDFypI&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=iPdH2YBgJyl4PCH8VSZzYA&_nc_ss=7ba8c&oh=00_AQIDOT46SBuHBnKqZP3se-xZjkq32aB_KCGIz7Y9GbNGCA&oe=6ABDB856',
+    likes: 0,
+    span: '',
+  },
+  {
+    caption: 'Your journey is better… when Nicola is with you.',
+    image_url:
+      'https://scontent-ams2-1.cdninstagram.com/v/t51.82787-15/674467863_17885114001527572_6514408799126191519_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=G1C3CP0otowQ7kNvwGqq32L&_nc_oc=AdpwhtKrosnhBgNUupiNXdekiUJA4a0mvxCPQGG3SC5_dchRj7tQglCfR_qDK_Njing&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=iPdH2YBgJyl4PCH8VSZzYA&_nc_ss=7ba8c&oh=00_AQJMnm-Qtmv3uF3zGB0Ug8gsaLGV-I8VAgmyhG7mnkUH8g&oe=6ABDD2F2',
+    likes: 0,
+    span: 'col-span-2',
+  },
+  {
+    caption: 'Elegance in the place… and a taste you’ll never forget 🤍✨',
+    image_url:
+      'https://scontent-ams2-1.cdninstagram.com/v/t51.82787-15/671809039_17884843083527572_8471216812389790923_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=z0sdg_UKaZEQ7kNvwGESnM-&_nc_oc=AdrBtp7FYEoqQZX_uOtXJFrJ0ZYzVR3FYTlMTdDGPN05MNyW0_9HTDRoxDyV7zHD1w8&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=iPdH2YBgJyl4PCH8VSZzYA&_nc_ss=7ba8c&oh=00_AQK_ahnGFSVzXvvcOnWcAkDoq5aIv8W6-yL144-RJOERdg&oe=6ABDC7E5',
+    likes: 0,
+    span: '',
+  },
+  {
+    caption: 'Not every moment is worth pausing for… but when it’s with Nicola, take it.',
+    image_url:
+      'https://scontent-ams2-1.cdninstagram.com/v/t51.82787-15/671072377_17884446291527572_6909998133943531100_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=AIS6sbRVbWoQ7kNvwFL9Lm1&_nc_oc=AdpojNbbj0TS_5QU9uYfz1K9rUrSCHo9eo6tvSs__pxBryvv7Cc0JkEeiCGilUiLA2k&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=iPdH2YBgJyl4PCH8VSZzYA&_nc_ss=7ba8c&oh=00_AQJ8D5Se3B23w5BZa3hNBGlyWYhD7pim5u48MFQMvhgfFA&oe=6ABDBD17',
+    likes: 0,
+    span: '',
+  },
+  {
+    caption: 'سر لايعرفة احد عن مطاعم ومقاهى آمباير - اربيل',
+    image_url:
+      'https://scontent-ams2-1.cdninstagram.com/v/t51.82787-15/671115222_17882211549537151_1983330903162968385_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=qrujt2hOiZkQ7kNvwEOLk0q&_nc_oc=AdpGBqsFXLNQ7to-uJLya5vpBPeJY0gpSkc5WZL0ciOtFWhuOTFZ0xJwnJgvRk5k0ko&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=iPdH2YBgJyl4PCH8VSZzYA&_nc_ss=7ba8c&oh=00_AQLossXVJbaSNeukwoZBxD84wG-bbIEfjTcqiCSSCmMXZg&oe=6ABDDB30',
+    likes: 0,
+    span: 'col-span-2',
+  },
+];
+---
+
+<div class="mt-12 grid auto-rows-[minmax(150px,auto)] grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:auto-rows-[minmax(180px,auto)]">
+  {
+    posts.map((p, i) => (
+      <a
+        href="https://www.instagram.com/nicolacafeerbil/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class:list={['tilt group relative block overflow-hidden rounded-2xl bg-cream reveal', p.span]}
+        data-tilt
+        style={`--d:${(i % 5) * 90}ms`}
+        aria-label={`Instagram post: ${p.caption.slice(0, 60)}`}
+      >
+        <img
+          src={p.image_url}
+          alt={p.caption}
+          width="640"
+          height="640"
+          loading="lazy"
+          decoding="async"
+          class="img-kenburns h-full min-h-[150px] w-full object-cover md:min-h-[180px]"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-focus-visible:opacity-100" />
+
+        <div class="tilt-inner pointer-events-none absolute inset-x-0 bottom-0 translate-y-3 p-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
+          <div class="glass rounded-xl p-3">
+            <p class="line-clamp-3 text-[12.5px] leading-snug text-bone">{p.caption}</p>
+            <div class="mt-2.5 flex items-center justify-between font-mono2 text-[10px] uppercase tracking-[.16em] text-bone/75">
+              <span class="inline-flex items-center gap-1.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 21s-7.5-4.7-9.6-9A5.4 5.4 0 0 1 12 6.2 5.4 5.4 0 0 1 21.6 12c-2.1 4.3-9.6 9-9.6 9Z" />
+                </svg>
+                {p.likes > 0 ? p.likes : 'like'}
+              </span>
+              <span>View ↗</span>
+            </div>
+          </div>
+        </div>
+
+        <span class="absolute right-3 top-3 rounded-full bg-ink/70 px-2.5 py-1 font-mono2 text-[9px] tracking-[.2em] text-bone opacity-0 backdrop-blur transition-opacity duration-300 group-hover:opacity-100">
+          0{i + 1}
+        </span>
+      </a>
+    ))
+  }
+</div>

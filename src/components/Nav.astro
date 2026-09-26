@@ -1,0 +1,96 @@
+---
+const links = [
+  { href: '#story', label: 'Story' },
+  { href: '#menu', label: 'Menu' },
+  { href: '#gallery', label: 'Gallery' },
+  { href: '#reviews', label: 'Reviews' },
+  { href: '#visit', label: 'Visit' },
+];
+const profile =
+  'https://scontent-ams2-1.cdninstagram.com/v/t51.82787-19/519728600_17846163981527572_2154922724636557149_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=102&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=rE6XguNLvBMQ7kNvwHMPDPj&_nc_oc=AdqQkh4Y8DolgqE6LfRhCiXXq8uDIWFnOKaFHVruvQt530-cmo8xqoCAkeCZYswIrkg&_nc_zt=24&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=UWQl3q5T9w751lcsvXxbqw&_nc_ss=7ba8c&oh=00_AQIaPuOk6SosRjkLj-xf8UA4iYIm_-ubjrPy2l8TqmE0uw&oe=6ABDB80B';
+---
+
+<header class="site-nav fixed inset-x-0 top-0 z-50" data-theme="dark" id="site-nav">
+  <div class="mx-auto max-w-shell px-5 sm:px-8">
+    <div class="flex h-16 items-center justify-between sm:h-20">
+      <a href="#top" class="group flex items-center gap-3" aria-label="Nicola Cafe home">
+        <img
+          src={profile}
+          alt=""
+          width="44"
+          height="44"
+          class="h-9 w-9 rounded-full object-cover ring-1 transition-transform duration-500 group-hover:scale-105"
+          style="box-shadow: 0 0 0 1px var(--nav-border);"
+        />
+        <span class="leading-none">
+          <span class="font-display block text-[15px] font-extrabold tracking-tight" style="color: var(--nav-fg)">NICOLA</span>
+          <span class="font-mono2 block text-[9px] tracking-[.3em] opacity-60" style="color: var(--nav-fg)">CAFE · ERBIL</span>
+        </span>
+      </a>
+
+      <nav aria-label="Primary" class="hidden items-center gap-1 lg:flex">
+        {
+          links.map((l) => (
+            <a class="nav-link" href={l.href} data-nav-link={l.href}>
+              {l.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <span
+          class="hidden items-center gap-2 rounded-full border px-3 py-1.5 md:inline-flex"
+          style="border-color: var(--nav-border)"
+          data-status-pill
+        >
+          <span class="h-1.5 w-1.5 rounded-full bg-[#7ee0a1] animate-blip" data-status-dot></span>
+          <span class="font-mono2 text-[10px] uppercase tracking-[.2em]" style="color: var(--nav-fg)" data-status>Open now</span>
+        </span>
+        <a href="tel:+9647500071779" class="btn btn-solid hidden !py-2.5 !text-[12px] sm:inline-flex">0750 007 1779</a>
+        <button
+          id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-panel"
+          aria-label="Toggle navigation menu"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full border lg:hidden"
+          style="border-color: var(--nav-border); color: var(--nav-fg)"
+        >
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none" aria-hidden="true">
+            <path d="M0 1h18M0 6h18M0 11h12" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="nav-panel" class="hidden border-t lg:hidden" style="border-color: var(--nav-border)">
+    <nav aria-label="Mobile" class="mx-auto flex max-w-shell flex-col px-5 py-3 sm:px-8">
+      {
+        links.map((l) => (
+          <a class="nav-link border-b border-current/10 py-3.5 !text-[13px] last:border-0" href={l.href} style="border-color: var(--nav-border)">
+            {l.label}
+          </a>
+        ))
+      }
+      <a href="tel:+9647500071779" class="btn btn-solid mt-3">Call 0750 007 1779</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const panel = document.getElementById('nav-panel');
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    panel?.classList.toggle('hidden', open);
+  });
+  panel?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => {
+      toggle?.setAttribute('aria-expanded', 'false');
+      panel?.classList.add('hidden');
+    }),
+  );
+</script>

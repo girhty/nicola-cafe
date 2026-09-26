@@ -1,0 +1,11 @@
+---
+const { className = 'absolute inset-0 h-full w-full', id = 'shader-canvas' } = Astro.props;
+---
+
+<canvas id={id} aria-hidden="true" class={className}></canvas>
+
+<script>
+  import { initShaderLayer } from '../scripts/webgl.js';
+  const c = document.getElementById('shader-canvas');
+  if (c instanceof HTMLCanvasElement) initShaderLayer(c);
+</script>

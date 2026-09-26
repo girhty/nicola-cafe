@@ -1,0 +1,63 @@
+---
+const profile =
+  'https://scontent-ams2-1.cdninstagram.com/v/t51.82787-19/519728600_17846163981527572_2154922724636557149_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=102&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=rE6XguNLvBMQ7kNvwHMPDPj&_nc_oc=AdqQkh4Y8DolgqE6LfRhCiXXq8uDIWFnOKaFHVruvQt530-cmo8xqoCAkeCZYswIrkg&_nc_zt=24&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=UWQl3q5T9w751lcsvXxbqw&_nc_ss=7ba8c&oh=00_AQIaPuOk6SosRjkLj-xf8UA4iYIm_-ubjrPy2l8TqmE0uw&oe=6ABDB80B';
+---
+
+<footer data-surface="dark" class="relative overflow-hidden border-t border-white/10 bg-ink pt-16">
+  <div class="mx-auto max-w-shell px-5 sm:px-8">
+    <div class="grid gap-10 pb-12 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-3">
+          <img src={profile} alt="" width="48" height="48" class="h-11 w-11 rounded-full object-cover ring-1 ring-amber/50" loading="lazy" />
+          <div class="leading-tight">
+            <p class="font-display text-lg font-extrabold">Nicola Cafe</p>
+            <p class="font-ar text-sm text-bone/55" dir="rtl">کافێ نیکۆڵا</p>
+          </div>
+        </div>
+        <p class="font-script mt-5 max-w-sm text-2xl leading-snug text-bone/70">
+          same flavor but a new way of drinking
+        </p>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-bone/45">
+          A spot in Erbil for premium coffee, sweet treats, and unmatched vibes. Since 1779.
+        </p>
+      </div>
+
+      <nav class="lg:col-span-3" aria-label="Footer">
+        <p class="font-mono2 text-[10px] uppercase tracking-[.28em] text-bone/40">Explore</p>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a class="hover:text-amber" href="#story">Story</a></li>
+          <li><a class="hover:text-amber" href="#menu">Menu</a></li>
+          <li><a class="hover:text-amber" href="#gallery">Gallery</a></li>
+          <li><a class="hover:text-amber" href="#reviews">Reviews</a></li>
+          <li><a class="hover:text-amber" href="#visit">Visit</a></li>
+        </ul>
+      </nav>
+
+      <div class="lg:col-span-4">
+        <p class="font-mono2 text-[10px] uppercase tracking-[.28em] text-bone/40">Contact</p>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a class="hover:text-amber" href="tel:+9647500071779">0750 007 1779</a></li>
+          <li class="text-bone/60">Erbil, Erbil Governorate</li>
+          <li class="text-bone/60">Daily · 8:30 AM — 12:30 AM</li>
+          <li class="flex items-center gap-2 pt-1" data-status-wrap>
+            <span class="h-2 w-2 rounded-full bg-[#7ee0a1] animate-blip" data-status-dot></span>
+            <span class="font-mono2 text-xs uppercase tracking-[.18em]" data-status>Checking…</span>
+          </li>
+        </ul>
+        <a
+          href="https://www.instagram.com/nicolacafeerbil/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline mt-6"
+        >
+          Instagram @nicolacafeerbil <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-between gap-3 border-t border-white/10 py-6 font-mono2 text-[10px] uppercase tracking-[.22em] text-bone/40 sm:flex-row">
+      <p>© {new Date().getFullYear()} Nicola Cafe · Erbil</p>
+      <p>Crafted with WebGL, care &amp; caffeine</p>
+    </div>
+  </div>
+</footer>
